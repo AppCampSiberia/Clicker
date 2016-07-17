@@ -1,56 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/defend_your_castle">
+    android:layout_height="match_parent">
+
+
+    <Button android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:text="New Button"
+        android:id="@+id/buttonClick" />
 
 
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="HP: %d"
-        android:id="@+id/textView"
-        android:gravity="center_vertical"
-        android:textSize="26sp"
-        android:textIsSelectable="false"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignBottom="@+id/buttonUpgrade"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="6dp" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="улучшение"
-        android:id="@+id/buttonUpgrade"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="ИГРАТЬ"
-        android:id="@+id/buttonPlay"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
-
-    <LinearLayout
+    <LinearLayout android:layout_weight="2"
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginBottom="64dp"
-        android:layout_marginTop="150dp">
+        android:layout_height="0dp">
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:id="@+id/imageViewCovboy"
-            android:scaleType="fitStart"
-            android:src="@drawable/covboy" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="курсор"
+            android:id="@+id/buttonCursor" />
 
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="шахтёр"
+            android:id="@+id/buttonShahter"
+            android:layout_gravity="center_horizontal" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ОП.шахтёр"
+            android:id="@+id/buttonOpitniyshahter"
+            android:layout_gravity="center_horizontal" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="шахтёр-лошадь"
+            android:id="@+id/buttonShahterloshadi"
+            android:layout_gravity="center_horizontal" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="шахтёр-робот"
+            android:id="@+id/buttonShahterrobot"
+            android:layout_gravity="center_horizontal" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="алхимик"
+            android:id="@+id/buttonAlhimik"
+            android:layout_gravity="center_horizontal" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="филосовский камень"
+            android:id="@+id/buttonFilosovskykameni"
+            android:layout_gravity="center_horizontal" />
     </LinearLayout>
-
-</RelativeLayout>
+</LinearLayout>

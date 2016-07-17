@@ -13,17 +13,19 @@ import ru.appcampsibria.clicker.R;
  * Created by Алексей on 17.07.2016.
  */
 public class MainActivity extends AppCompatActivity {
+    long clickCount;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        Button buttonPlay = (Button) findViewById(R.id.buttonPlay);
-        final ImageView imageViewCovboy = (ImageView) findViewById(R.id.imageViewCovboy );
-        buttonPlay.setOnClickListener(new View.OnClickListener() {
+        clickCount = 0;
+        final Button buttonClick = (Button) findViewById(R.id.buttonClick);
+        buttonClick.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                imageViewCovboy.
+                clickCount++;
+                buttonClick.setText(Long.toString(clickCount));
             }
         });
     }
