@@ -18,6 +18,13 @@ public class MainActivity extends AppCompatActivity {
 
     MineThread mineThread;
     Button buttonClick;
+    Button buttonCursor;
+    Button buttonShahter;
+    Button buttonOpitniyshahter;
+    Button buttonShahterloshadi;
+    Button buttonShahterrobot;
+    Button buttonAlhimik;
+    Button buttonFilosovskykameni;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -34,11 +41,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 clickCount++;
-                buttonClick.setText(Long.toString(clickCount));
+                render();
             }
         });
 
-        final Button buttonCursor = (Button) findViewById(R.id.buttonCursor);
+        buttonCursor = (Button) findViewById(R.id.buttonCursor);
         buttonCursor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -46,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        final Button buttonShahter = (Button) findViewById(R.id.buttonShahter);
+        buttonShahter = (Button) findViewById(R.id.buttonShahter);
         buttonShahter .setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -54,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        final Button buttonOpitniyshahter = (Button) findViewById(R.id.buttonOpitniyshahter);
+        buttonOpitniyshahter = (Button) findViewById(R.id.buttonOpitniyshahter);
         buttonOpitniyshahter .setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -62,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        final Button buttonShahterloshadi = (Button) findViewById(R.id.buttonShahterloshadi);
+        buttonShahterloshadi = (Button) findViewById(R.id.buttonShahterloshadi);
         buttonShahterloshadi .setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -70,21 +77,21 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        final Button buttonShahterrobot = (Button) findViewById(R.id.buttonShahterrobot);
+        buttonShahterrobot = (Button) findViewById(R.id.buttonShahterrobot);
         buttonShahterrobot .setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mineThread.buy(5);
             }
         });
-        final Button buttonAlhimik = (Button) findViewById(R.id.buttonAlhimik);
+        buttonAlhimik = (Button) findViewById(R.id.buttonAlhimik);
         buttonAlhimik .setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mineThread.buy(6);
             }
         });
-        final Button buttonFilosovskykameni = (Button) findViewById(R.id.buttonFilosovskykameni);
+        buttonFilosovskykameni = (Button) findViewById(R.id.buttonFilosovskykameni);
         buttonFilosovskykameni .setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -98,7 +105,43 @@ public class MainActivity extends AppCompatActivity {
              @Override
              public void run() {
                  buttonClick.setText(Long.toString(clickCount));
+
+                 if (clickCount >= 20) {
+                     buttonCursor.setEnabled(true);
+                 } else {
+                     buttonCursor.setEnabled(false);
+                 }
+                 if (clickCount >= 100) {
+                     buttonShahter.setEnabled(true);
+                 } else {
+                     buttonShahter.setEnabled(false);
+                 }
+                 if (clickCount >= 1000) {
+                     buttonOpitniyshahter.setEnabled(true);
+                 } else {
+                     buttonOpitniyshahter.setEnabled(false);
+                 }
+                 if (clickCount >= 15000) {
+                     buttonShahterloshadi.setEnabled(true);
+                 } else {
+                     buttonShahterloshadi.setEnabled(false);
              }
+                 if (clickCount >= 510000) {
+                     buttonShahterrobot.setEnabled(true);
+                 } else {
+                     buttonShahterrobot.setEnabled(false);
+                 }
+                 if (clickCount >= 2500000) {
+                     buttonAlhimik.setEnabled(true);
+                 } else {
+                     buttonAlhimik.setEnabled(false);
+                 }
+                 if (clickCount >= 6000000) {
+                     buttonFilosovskykameni.setEnabled(true);
+                 } else {
+                     buttonFilosovskykameni.setEnabled(false);
+                 }
+         }
          });
      }
 }

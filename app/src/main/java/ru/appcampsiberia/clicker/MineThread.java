@@ -53,35 +53,54 @@ public class MineThread implements Runnable {
     public void buy(int who) {
         switch (who) {
             case 1: //kursor
-                kolichestvoCursorov++;
-                dobuchaVsek += 1;
+                if (mainActivity.clickCount >= 20) {
+                    kolichestvoCursorov++;
+                    dobuchaVsek += dobuchaCursorov;
+                    mainActivity.clickCount -= costCursorov;
+                }
                 break;
             case 2: //shahter
-                kolichestvoShahterov++;
-                dobuchaVsek += 2;
+                if (mainActivity.clickCount >= 100) {
+                    kolichestvoShahterov++;
+                    dobuchaVsek += dobuchaShahterov;
+                    mainActivity.clickCount -= costShahterov;
+                }
                 break;
             case 3: //opshahter
-                kolichestvoOpshahterov++;
-                dobuchaVsek += 5;
+                if (mainActivity.clickCount >= 1000) {
+                    kolichestvoOpshahterov++;
+                    dobuchaVsek += dobuchaOpshahterov;
+                    mainActivity.clickCount -= costOpshahterov;
+                }
                 break;
             case 4: //loshadshahter
-                kolichestvoLoshadshahterov++;
-                dobuchaVsek += 20;
+                if (mainActivity.clickCount >= 15000) {
+                    kolichestvoLoshadshahterov++;
+                    dobuchaVsek += dobuchaOpshahterov;
+                    mainActivity.clickCount -= costLoshadshahterov;
+                }
                 break;
             case 5: //roboshahter
-                kolichestvoRoboshahterov++;
-                dobuchaVsek += 40;
+                if (mainActivity.clickCount >= 500000) {
+                    kolichestvoRoboshahterov++;
+                    dobuchaVsek += dobuchaRoboshahterov;
+                    mainActivity.clickCount -= costRoboshahterov;
+                }
                 break;
             case 6: //alhimic
-                kolichestvoAlhimikov++;
-                dobuchaVsek += 100;
+                if (mainActivity.clickCount >= 2500000) {
+                    kolichestvoAlhimikov++;
+                    dobuchaVsek += dobuchaAlhimikov;
+                    mainActivity.clickCount -= costAlhimikov;
+                }
                 break;
             case 7: //filosovskiykamen
-                kolichestvoFilosovskiykamen++;
-                dobuchaVsek += 1000;
+                if (mainActivity.clickCount >= 50000000) {
+                    kolichestvoFilosovskiykamen++;
+                    dobuchaVsek += dobuchaFilosovskiykamen;
+                    mainActivity.clickCount -= costFilosovskiykamen;
+                }
                 break;
-
         }
     }
-
 }
