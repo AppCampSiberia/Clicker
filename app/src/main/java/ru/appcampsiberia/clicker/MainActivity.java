@@ -1,6 +1,7 @@
 package ru.appcampsiberia.clicker;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -13,7 +14,10 @@ import ru.appcampsibria.clicker.R;
  * Created by Алексей on 17.07.2016.
  */
 public class MainActivity extends AppCompatActivity {
-    long clickCount;
+    public long clickCount;
+
+    MineThread mineThread;
+    Button buttonClick;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -21,7 +25,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         clickCount = 0;
 
-        final Button buttonClick = (Button) findViewById(R.id.buttonClick);
+        mineThread = new MineThread(this);
+        Thread thread = new Thread(mineThread);
+        thread.start();
+
+        buttonClick = (Button) findViewById(R.id.buttonClick);
         buttonClick.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -31,64 +39,66 @@ public class MainActivity extends AppCompatActivity {
         });
 
         final Button buttonCursor = (Button) findViewById(R.id.buttonCursor);
-        buttonClick.setOnClickListener(new View.OnClickListener() {
+        buttonCursor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                mineThread.buy(1);
             }
         });
 
         final Button buttonShahter = (Button) findViewById(R.id.buttonShahter);
-        buttonClick.setOnClickListener(new View.OnClickListener() {
+        buttonShahter .setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                mineThread.buy(2);
             }
         });
 
         final Button buttonOpitniyshahter = (Button) findViewById(R.id.buttonOpitniyshahter);
-        buttonClick.setOnClickListener(new View.OnClickListener() {
+        buttonOpitniyshahter .setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                mineThread.buy(3);
             }
         });
 
         final Button buttonShahterloshadi = (Button) findViewById(R.id.buttonShahterloshadi);
-        buttonClick.setOnClickListener(new View.OnClickListener() {
+        buttonShahterloshadi .setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                mineThread.buy(4);
             }
         });
 
         final Button buttonShahterrobot = (Button) findViewById(R.id.buttonShahterrobot);
-        buttonClick.setOnClickListener(new View.OnClickListener() {
+        buttonShahterrobot .setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                mineThread.buy(5);
             }
         });
         final Button buttonAlhimik = (Button) findViewById(R.id.buttonAlhimik);
-        buttonClick.setOnClickListener(new View.OnClickListener() {
+        buttonAlhimik .setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                mineThread.buy(6);
             }
         });
         final Button buttonFilosovskykameni = (Button) findViewById(R.id.buttonFilosovskykameni);
-        buttonClick.setOnClickListener(new View.OnClickListener() {
+        buttonFilosovskykameni .setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                mineThread.buy(7);
             }
         });
-
-
-
-
-
-
-
     }
+
+     public void render() {
+         runOnUiThread(new Runnable() {
+             @Override
+             public void run() {
+                 buttonClick.setText(Long.toString(clickCount));
+             }
+         });
+     }
 }
