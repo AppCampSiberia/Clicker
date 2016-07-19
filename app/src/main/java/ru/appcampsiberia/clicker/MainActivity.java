@@ -199,7 +199,24 @@ public class MainActivity extends AppCompatActivity {
                  textViewShahterrobotr.setText(Long.toString(mineThread.kolichestvoRoboshahterov));
                  textViewAlhimik.setText(Long.toString(mineThread.kolichestvoAlhimikov));
                  textViewFilosovskykameni.setText(Long.toString(mineThread.kolichestvoFilosovskiykamen));
-         }
+
+                 textViewCursorCost.setText(Long.toString(mineThread.costCursorov));
+                 textViewShahterCost.setText(Long.toString(mineThread.costShahterov));
+                 textViewOpitniyShahterCost.setText(Long.toString(mineThread.costOpshahterov));
+                 textViewShahterloshadiCost.setText(Long.toString(mineThread.costLoshadshahterov));
+                 textViewShahterrobotrCost.setText(Long.toString(mineThread.costRoboshahterov));
+                 textViewAlhimikCost.setText(Long.toString(mineThread.costAlhimikov));
+                 textViewFilosovskykameniCost.setText(Long.toString(mineThread.costFilosovskiykamen));
+
+                 textViewCursorPower.setText(Long.toString(mineThread.dobuchaCursorov));
+                 textViewShahterPower.setText(Long.toString(mineThread.dobuchaShahterov));
+                 textViewOpitniyShahterPower.setText(Long.toString(mineThread.dobuchaOpshahterov));
+                 textViewShahterloshadiPower.setText(Long.toString(mineThread.dobuchaLoshadshahterov));
+                 textViewShahterrobotrPower.setText(Long.toString(mineThread.dobuchaRoboshahterov));
+                 textViewAlhimikPower.setText(Long.toString(mineThread.dobuchaAlhimikov));
+                 textViewFilosovskykameniPower.setText(Long.toString(mineThread.dobuchaFilosovskiykamen));
+
+             }
          });
      }
 }

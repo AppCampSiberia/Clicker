@@ -17,21 +17,21 @@ public class MineThread implements Runnable {
     public long kolichestvoAlhimikov = 0;
     public long kolichestvoFilosovskiykamen = 0;
 
-    long dobuchaCursorov = 1;
-    long dobuchaShahterov = 2;
-    long dobuchaOpshahterov = 5;
-    long dobuchaLoshadshahterov = 20;
-    long dobuchaRoboshahterov = 40;
-    long dobuchaAlhimikov = 100;
-    long dobuchaFilosovskiykamen = 1000;
+    public long dobuchaCursorov = 1;
+    public long dobuchaShahterov = 5;
+    public long dobuchaOpshahterov = 10;
+    public long dobuchaLoshadshahterov = 40;
+    public long dobuchaRoboshahterov = 80;
+    public long dobuchaAlhimikov = 150;
+    public long dobuchaFilosovskiykamen = 1000;
 
-    long costCursorov = 20;
-    long costShahterov = 100;
-    long costOpshahterov = 1000;
-    long costLoshadshahterov = 15000;
-    long costRoboshahterov = 50000;
-    long costAlhimikov = 250000;
-    long costFilosovskiykamen = 500000;
+    public long costCursorov = 20;
+    public long costShahterov = 100;
+    public long costOpshahterov = 1000;
+    public long costLoshadshahterov = 15000;
+    public long costRoboshahterov = 50000;
+    public long costAlhimikov = 250000;
+    public long costFilosovskiykamen = 500000;
 
     public MineThread(MainActivity mainActivity) {
         this.mainActivity = mainActivity;
