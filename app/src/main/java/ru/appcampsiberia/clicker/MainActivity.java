@@ -143,17 +143,17 @@ public class MainActivity extends AppCompatActivity {
                  } else {
                      buttonShahterloshadi.setEnabled(false);
              }
-                 if (clickCount >= 510000) {
+                 if (clickCount >= 50000) {
                      buttonShahterrobot.setEnabled(true);
                  } else {
                      buttonShahterrobot.setEnabled(false);
                  }
-                 if (clickCount >= 2500000) {
+                 if (clickCount >= 250000) {
                      buttonAlhimik.setEnabled(true);
                  } else {
                      buttonAlhimik.setEnabled(false);
                  }
-                 if (clickCount >= 6000000) {
+                 if (clickCount >= 500000) {
                      buttonFilosovskykameni.setEnabled(true);
                  } else {
                      buttonFilosovskykameni.setEnabled(false);

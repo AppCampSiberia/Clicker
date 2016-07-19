@@ -29,9 +29,9 @@ public class MineThread implements Runnable {
     long costShahterov = 100;
     long costOpshahterov = 1000;
     long costLoshadshahterov = 15000;
-    long costRoboshahterov = 500000;
-    long costAlhimikov = 2500000;
-    long costFilosovskiykamen = 5000000;
+    long costRoboshahterov = 50000;
+    long costAlhimikov = 250000;
+    long costFilosovskiykamen = 500000;
 
     public MineThread(MainActivity mainActivity) {
         this.mainActivity = mainActivity;
@@ -81,21 +81,21 @@ public class MineThread implements Runnable {
                 }
                 break;
             case 5: //roboshahter
-                if (mainActivity.clickCount >= 500000) {
+                if (mainActivity.clickCount >= 50000) {
                     kolichestvoRoboshahterov++;
                     dobuchaVsek += dobuchaRoboshahterov;
                     mainActivity.clickCount -= costRoboshahterov;
                 }
                 break;
             case 6: //alhimic
-                if (mainActivity.clickCount >= 2500000) {
+                if (mainActivity.clickCount >= 250000) {
                     kolichestvoAlhimikov++;
                     dobuchaVsek += dobuchaAlhimikov;
                     mainActivity.clickCount -= costAlhimikov;
                 }
                 break;
             case 7: //filosovskiykamen
-                if (mainActivity.clickCount >= 50000000) {
+                if (mainActivity.clickCount >= 500000) {
                     kolichestvoFilosovskiykamen++;
                     dobuchaVsek += dobuchaFilosovskiykamen;
                     mainActivity.clickCount -= costFilosovskiykamen;
