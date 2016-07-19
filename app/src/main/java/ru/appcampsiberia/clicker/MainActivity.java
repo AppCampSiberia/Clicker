@@ -35,6 +35,23 @@ public class MainActivity extends AppCompatActivity {
     TextView textViewAlhimik;
     TextView textViewFilosovskykameni;
 
+    TextView textViewCursorCost;
+    TextView textViewShahterCost;
+    TextView textViewOpitniyShahterCost;
+    TextView textViewShahterloshadiCost;
+    TextView textViewShahterrobotrCost;
+    TextView textViewAlhimikCost;
+    TextView textViewFilosovskykameniCost;
+
+    TextView textViewCursorPower;
+    TextView textViewShahterPower;
+    TextView textViewOpitniyShahterPower;
+    TextView textViewShahterloshadiPower;
+    TextView textViewShahterrobotrPower;
+    TextView textViewAlhimikPower;
+    TextView textViewFilosovskykameniPower;
+
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,6 +65,22 @@ public class MainActivity extends AppCompatActivity {
         textViewShahterrobotr = (TextView) findViewById(R.id.textViewShahterrobot);
         textViewAlhimik = (TextView) findViewById(R.id.textViewAlhimik);
         textViewFilosovskykameni = (TextView) findViewById(R.id.textViewFilosovskykameni);
+
+        textViewCursorCost= (TextView) findViewById(R.id.textViewCursorCost);
+        textViewShahterCost= (TextView) findViewById(R.id.textViewShahterCost);
+        textViewOpitniyShahterCost= (TextView) findViewById(R.id.textViewOpitniyshahterCost);
+        textViewShahterloshadiCost= (TextView) findViewById(R.id.textViewShahterloshadiCost);
+        textViewShahterrobotrCost= (TextView) findViewById(R.id.textViewShahterrobotCost);
+        textViewAlhimikCost= (TextView) findViewById(R.id.textViewAlhimikCost);
+        textViewFilosovskykameniCost= (TextView) findViewById(R.id.textViewFilosovskykameniCost);
+
+        textViewCursorPower = (TextView) findViewById(R.id.textViewCursorPower);
+        textViewShahterPower = (TextView) findViewById(R.id.textViewShahterPower);
+        textViewOpitniyShahterPower = (TextView) findViewById(R.id.textViewOpitniyshahterPower);
+        textViewShahterloshadiPower = (TextView) findViewById(R.id.textViewShahterloshadiPower);
+        textViewShahterrobotrPower = (TextView) findViewById(R.id.textViewShahterrobotPower);
+        textViewAlhimikPower = (TextView) findViewById(R.id.textViewAlhimikPower);
+        textViewFilosovskykameniPower = (TextView) findViewById(R.id.textViewFilosovskykameniPower);
 
         mineThread = new MineThread(this);
         Thread thread = new Thread(mineThread);

@@ -48,6 +48,18 @@
             android:id="@+id/imageView"
             android:src="@drawable/cursor" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Text"
+            android:id="@+id/textViewCursorCost" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Text"
+            android:id="@+id/textViewCursorPower" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -71,6 +83,17 @@
             android:layout_height="128dp"
             android:id="@+id/imageView7"
             android:src="@drawable/op" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Text"
+            android:id="@+id/textViewShahterCost" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Text"
+            android:id="@+id/textViewShahterPower" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -96,6 +119,17 @@
             android:layout_height="128dp"
             android:id="@+id/imageView3"
             android:src="@drawable/a1" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Text"
+            android:id="@+id/textViewOpitniyshahterCost" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Text"
+            android:id="@+id/textViewOpitniyshahterPower" />
 
         <LinearLayout
 
@@ -122,6 +156,17 @@
             android:layout_height="128dp"
             android:id="@+id/imageView2"
             android:src="@drawable/igogo" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Text"
+            android:id="@+id/textViewShahterloshadiCost" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Text"
+            android:id="@+id/textViewShahterloshadiPower" />
 
         <LinearLayout
 
@@ -148,6 +193,17 @@
             android:layout_height="128dp"
             android:id="@+id/imageView4"
             android:src="@drawable/robot" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Text"
+            android:id="@+id/textViewShahterrobotCost" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Text"
+            android:id="@+id/textViewShahterrobotPower" />
 
         <LinearLayout
 
@@ -175,6 +231,17 @@
             android:layout_height="128dp"
             android:id="@+id/imageView5"
             android:src="@drawable/a2" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Text"
+            android:id="@+id/textViewAlhimikCost" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Text"
+            android:id="@+id/textViewAlhimikPower" />
 
         <LinearLayout
 
@@ -201,6 +268,17 @@
             android:layout_height="128dp"
             android:id="@+id/imageView6"
             android:src="@drawable/a3" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Text"
+            android:id="@+id/textViewFilosovskykameniCost" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Text"
+            android:id="@+id/textViewFilosovskykameniPower" />
     </LinearLayout>
     </ScrollView>
 </LinearLayout>
