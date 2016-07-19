@@ -186,7 +186,7 @@ public class MainActivity extends AppCompatActivity {
                  } else {
                      buttonAlhimik.setEnabled(false);
                  }
-                 if (clickCount >= 500000) {
+                 if (clickCount >= 5000000) {
                      buttonFilosovskykameni.setEnabled(true);
                  } else {
                      buttonFilosovskykameni.setEnabled(false);
