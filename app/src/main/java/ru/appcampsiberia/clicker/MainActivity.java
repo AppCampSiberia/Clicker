@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
     public long clickCount;
 
     MineThread mineThread;
-    Button buttonClick;
+    ImageView imageGold;
     Button buttonCursor;
     Button buttonShahter;
     Button buttonOpitniyshahter;
@@ -36,8 +36,8 @@ public class MainActivity extends AppCompatActivity {
         Thread thread = new Thread(mineThread);
         thread.start();
 
-        buttonClick = (Button) findViewById(R.id.buttonClick);
-        buttonClick.setOnClickListener(new View.OnClickListener() {
+        imageGold = (ImageView) findViewById(R.id.imageViewGold);
+        imageGold.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 clickCount++;
@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
          runOnUiThread(new Runnable() {
              @Override
              public void run() {
-                 buttonClick.setText(Long.toString(clickCount));
+                getSupportActionBar().setTitle(Long.toString(clickCount));
 
                  if (clickCount >= 20) {
                      buttonCursor.setEnabled(true);
