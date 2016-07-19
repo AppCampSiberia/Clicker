@@ -43,8 +43,8 @@
         </LinearLayout>
 
         <ImageView
-            android:layout_width="64dp"
-            android:layout_height="64dp"
+            android:layout_width="128dp"
+            android:layout_height="128dp"
             android:id="@+id/imageView"
             android:src="@drawable/cursor" />
 
@@ -67,8 +67,8 @@
         </LinearLayout>
 
         <ImageView
-            android:layout_width="64dp"
-            android:layout_height="64dp"
+            android:layout_width="128dp"
+            android:layout_height="128dp"
             android:id="@+id/imageView7"
             android:src="@drawable/op" />
 
@@ -92,8 +92,8 @@
         </LinearLayout>
 
         <ImageView
-            android:layout_width="64dp"
-            android:layout_height="64dp"
+            android:layout_width="128dp"
+            android:layout_height="128dp"
             android:id="@+id/imageView3"
             android:src="@drawable/a1" />
 
@@ -118,8 +118,8 @@
         </LinearLayout>
 
         <ImageView
-            android:layout_width="64dp"
-            android:layout_height="64dp"
+            android:layout_width="128dp"
+            android:layout_height="128dp"
             android:id="@+id/imageView2"
             android:src="@drawable/igogo" />
 
@@ -144,8 +144,8 @@
         </LinearLayout>
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="128dp"
+            android:layout_height="128dp"
             android:id="@+id/imageView4"
             android:src="@drawable/robot" />
 
@@ -171,8 +171,8 @@
         </LinearLayout>
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="128dp"
+            android:layout_height="128dp"
             android:id="@+id/imageView5"
             android:src="@drawable/a2" />
 
@@ -197,8 +197,8 @@
         </LinearLayout>
 
         <ImageView
-            android:layout_width="64dp"
-            android:layout_height="64dp"
+            android:layout_width="128dp"
+            android:layout_height="128dp"
             android:id="@+id/imageView6"
             android:src="@drawable/a3" />
     </LinearLayout>
