@@ -35,7 +35,7 @@
                 android:text="курсор" />
 
             <TextView
-                android:id="@+id/textView"
+                android:id="@+id/textViewCursor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="New Text" />
@@ -60,7 +60,7 @@
                 android:text="шахтёр" />
 
             <TextView
-                android:id="@+id/textView1"
+                android:id="@+id/textViewShahter"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="New Text" />
@@ -84,7 +84,7 @@
                 android:text="ОП.шахтёр" />
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/textViewOpitniyshahter"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="New Text" />
@@ -110,7 +110,7 @@
                 android:text="шахтёр-лошадь" />
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/textViewShahterloshadi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="New Text" />
@@ -136,7 +136,7 @@
                 android:text="шахтёр-робот" />
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/textViewShahterrobot"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="New Text" />
@@ -162,7 +162,7 @@
                 android:text="алхимик" />
 
             <TextView
-                android:id="@+id/textView5"
+                android:id="@+id/textViewAlhimik"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="New Text" />
@@ -189,7 +189,7 @@
                 android:text="филосовский камень" />
 
             <TextView
-                android:id="@+id/textView6"
+                android:id="@+id/textViewFilosovskykameni"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="New Text" />

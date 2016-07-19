@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import ru.appcampsibria.clicker.R;
 
@@ -26,11 +27,27 @@ public class MainActivity extends AppCompatActivity {
     Button buttonAlhimik;
     Button buttonFilosovskykameni;
 
+    TextView textViewCursor;
+    TextView textViewShahter;
+    TextView textViewOpitniyShahter;
+    TextView textViewShahterloshadi;
+    TextView textViewShahterrobotr;
+    TextView textViewAlhimik;
+    TextView textViewFilosovskykameni;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         clickCount = 0;
+
+        textViewCursor = (TextView) findViewById(R.id.textViewCursor);
+        textViewShahter = (TextView) findViewById(R.id.textViewShahter);
+        textViewOpitniyShahter = (TextView) findViewById(R.id.textViewOpitniyshahter);
+        textViewShahterloshadi = (TextView) findViewById(R.id.textViewShahterloshadi);
+        textViewShahterrobotr = (TextView) findViewById(R.id.textViewShahterrobot);
+        textViewAlhimik = (TextView) findViewById(R.id.textViewAlhimik);
+        textViewFilosovskykameni = (TextView) findViewById(R.id.textViewFilosovskykameni);
 
         mineThread = new MineThread(this);
         Thread thread = new Thread(mineThread);
@@ -141,6 +158,14 @@ public class MainActivity extends AppCompatActivity {
                  } else {
                      buttonFilosovskykameni.setEnabled(false);
                  }
+
+                 textViewCursor.setText(Long.toString(mineThread.kolichestvoCursorov));
+                 textViewShahter.setText(Long.toString(mineThread.kolichestvoShahterov));
+                 textViewOpitniyShahter.setText(Long.toString(mineThread.kolichestvoOpshahterov));
+                 textViewShahterloshadi.setText(Long.toString(mineThread.kolichestvoLoshadshahterov));
+                 textViewShahterrobotr.setText(Long.toString(mineThread.kolichestvoRoboshahterov));
+                 textViewAlhimik.setText(Long.toString(mineThread.kolichestvoAlhimikov));
+                 textViewFilosovskykameni.setText(Long.toString(mineThread.kolichestvoFilosovskiykamen));
          }
          });
      }

@@ -9,13 +9,13 @@ public class MineThread implements Runnable {
 
     long dobuchaVsek = 0;
 
-    long kolichestvoCursorov = 0;
-    long kolichestvoShahterov = 0;
-    long kolichestvoOpshahterov = 0;
-    long kolichestvoLoshadshahterov = 0;
-    long kolichestvoRoboshahterov = 0;
-    long kolichestvoAlhimikov = 0;
-    long kolichestvoFilosovskiykamen = 0;
+    public long kolichestvoCursorov = 0;
+    public long kolichestvoShahterov = 0;
+    public long kolichestvoOpshahterov = 0;
+    public long kolichestvoLoshadshahterov = 0;
+    public long kolichestvoRoboshahterov = 0;
+    public long kolichestvoAlhimikov = 0;
+    public long kolichestvoFilosovskiykamen = 0;
 
     long dobuchaCursorov = 1;
     long dobuchaShahterov = 2;
