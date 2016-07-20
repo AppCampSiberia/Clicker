@@ -7,7 +7,7 @@ public class MineThread implements Runnable {
 
     MainActivity mainActivity;
 
-    long dobuchaVsek = 0;
+    public long dobuchaVsek = 0;
 
     public long kolichestvoCursorov = 0;
     public long kolichestvoShahterov = 0;

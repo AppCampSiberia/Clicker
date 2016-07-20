@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Авторы игры:
+ Егор Гольденберг - в основном писал код программы, но так же иногда помогал с дизайном.
+Именно из-за него у нас такие ужастные аватарки для автокликов, - да, да, да, это его
+дело!
+
+ Артур Нифёдов - сначала делал анимацию, которая нам не приходилась, но так же помогал с
+кодом и дизайном. Приставал ко всем и мешал работать, но в дело внёс некоторое количество
+картинок.
+
+ Алексей Моргунов - помогал в основном с кодом и сделал иконку для игры. Придумал саму идею,
+но хоть и внёс много чего, часто отходил от создания программы. Половину времени вообще ничего
+не делал.
+
+
+
+
+
+
+
+
+                       Все права защищены законом."
+        android:id="@+id/textView"
+        android:layout_weight="0.26" />
+</LinearLayout>
