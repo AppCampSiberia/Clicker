@@ -5,12 +5,13 @@
     android:orientation="vertical">
 
     <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
         android:id="@+id/imageViewGold"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
         android:layout_weight="1"
+        android:scaleType="centerCrop"
         android:src="@drawable/gold"
-        android:scaleType="centerCrop" />
+        android:layout_gravity="center_horizontal" />
 
     <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/scroll"
@@ -18,267 +19,334 @@
         android:layout_height="0dp"
         android:layout_weight="2">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="vertical">
 
-            <Button
-                android:id="@+id/buttonCursor"
-                android:layout_width="wrap_content"
+            <RelativeLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="курсор" />
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="6dp">
 
-            <TextView
-                android:id="@+id/textViewCursor"
-                android:layout_width="wrap_content"
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="128dp"
+                    android:layout_height="128dp"
+                    android:src="@drawable/cursor" />
+
+                <Button
+                    android:id="@+id/buttonCursorCount"
+                    android:layout_width="128dp"
+                    android:layout_height="128dp"
+                    android:layout_toEndOf="@+id/imageView"
+                    android:background="#ff0000"
+                    android:text="курсор" />
+
+                <TextView
+                    android:id="@+id/textViewCursor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_toEndOf="@+id/buttonCursorCount"
+                    android:text="New Text" />
+
+                <TextView
+                    android:id="@+id/textViewCursorCost"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/textViewCursorPower"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/buttonCursorCount"
+                    android:text="New Text" />
+
+                <TextView
+                    android:id="@+id/textViewCursorPower"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignStart="@+id/textViewCursorCost"
+                    android:text="New Text" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="New Text" />
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="6dp">
 
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="128dp"
+                    android:layout_height="128dp"
+                    android:src="@drawable/shahter" />
+
+                <Button
+                    android:id="@+id/buttonShahter"
+                    android:layout_width="128dp"
+                    android:layout_height="128dp"
+                    android:layout_toEndOf="@+id/imageView"
+                    android:background="#ff0000"
+                    android:text="шахтёр" />
+
+                <TextView
+                    android:id="@+id/textViewShahterCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_toEndOf="@+id/buttonShahter"
+                    android:text="New Text" />
+
+                <TextView
+                    android:id="@+id/textViewShahterCost"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/textViewShahterPower"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/buttonShahter"
+                    android:text="New Text" />
+
+                <TextView
+                    android:id="@+id/textViewShahterPower"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignStart="@+id/textViewShahterCost"
+                    android:text="New Text" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="6dp">
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="128dp"
+                    android:layout_height="128dp"
+                    android:src="@drawable/op" />
+
+                <Button
+                    android:id="@+id/buttonOpitniyshahter"
+                    android:layout_width="128dp"
+                    android:layout_height="128dp"
+                    android:layout_toEndOf="@+id/imageView"
+                    android:background="#ff0000"
+                    android:text="ОП.шахтер" />
+
+                <TextView
+                    android:id="@+id/textViewOpitniyshahterCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_toEndOf="@+id/buttonOpitniyshahter"
+                    android:text="New Text" />
+
+                <TextView
+                    android:id="@+id/textViewOpitniyshahterCost"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/textViewOpitniyshahterPower"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/buttonOpitniyshahter"
+                    android:text="New Text" />
+
+                <TextView
+                    android:id="@+id/textViewOpitniyshahterPower"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignStart="@+id/textViewOpitniyshahterCost"
+                    android:text="New Text" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="6dp">
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="128dp"
+                    android:layout_height="128dp"
+                    android:src="@drawable/igogo" />
+
+                <Button
+                    android:id="@+id/buttonShahterloshadi"
+                    android:layout_width="128dp"
+                    android:layout_height="128dp"
+                    android:layout_toEndOf="@+id/imageView"
+                    android:background="#ff0000"
+                    android:text="шахтёрлошадь" />
+
+                <TextView
+                    android:id="@+id/textViewShahterloshadiCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_toEndOf="@+id/buttonShahterloshadi"
+                    android:text="New Text" />
+
+                <TextView
+                    android:id="@+id/textViewShahterloshadiCost"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/buttonShahterloshadi"
+                    android:text="New Text" />
+
+                <TextView
+                    android:id="@+id/textViewShahterloshadiPower"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/buttonShahterloshadi"
+                    android:layout_alignParentBottom="true"
+                    android:text="New Text" />
+
+            </RelativeLayout>
+
+            <RelativeLayout android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="6dp">
+
+                <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="128dp"
+                    android:layout_height="128dp"
+                    android:src="@drawable/robot" />
+
+                <Button
+                    android:id="@+id/buttonShahterrobot"
+                    android:layout_width="128dp"
+                    android:layout_height="128dp"
+                    android:layout_toRightOf="@id/imageView4"
+                    android:background="#ff0000"
+                    android:text="шахтёр-робот" />
+
+                <TextView
+                    android:id="@+id/textViewShahterrobotCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/buttonShahterrobot"
+                    android:layout_alignParentTop="true"
+                    android:text="New Text" />
+
+                <TextView
+                    android:id="@+id/textViewShahterrobotCost"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/buttonShahterrobot"
+                    android:layout_centerVertical="true"
+                    android:text="New Text" />
+
+                <TextView
+                    android:id="@+id/textViewShahterrobotPower"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/buttonShahterrobot"
+                    android:layout_alignParentBottom="true"
+                    android:text="New Text" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="6dp">
+
+                <ImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="128dp"
+                    android:layout_height="128dp"
+                    android:src="@drawable/alchimic" />
+
+                <Button
+                    android:id="@+id/buttonAlhimik"
+                    android:layout_width="128dp"
+                    android:layout_height="128dp"
+                    android:background="#ff0000"
+                    android:layout_toRightOf="@id/imageView5"
+                    android:text="алхимик" />
+
+                <TextView
+                    android:id="@+id/textViewAlhimikCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/buttonAlhimik"
+                    android:layout_alignParentTop="true"
+                    android:text="New Text" />
+
+                <TextView
+                    android:id="@+id/textViewAlhimikCost"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/buttonAlhimik"
+                    android:layout_centerVertical="true"
+                    android:text="New Text" />
+
+                <TextView
+                    android:id="@+id/textViewAlhimikPower"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/buttonAlhimik"
+                    android:layout_alignParentBottom="true"
+                    android:text="New Text" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="6dp">
+
+                <ImageView
+                    android:id="@+id/imageView6"
+                    android:layout_width="128dp"
+                    android:layout_height="128dp"
+                    android:src="@drawable/filosophy_stone" />
+
+                <Button
+                    android:id="@+id/buttonFilosovskykameni"
+                    android:layout_width="128dp"
+                    android:layout_height="128dp"
+                    android:background="#ff0000"
+                    android:layout_toRightOf="@id/imageView6"
+                    android:text="филосовский камень" />
+
+                <TextView
+                    android:id="@+id/textViewFilosovskykameniCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/buttonFilosovskykameni"
+                    android:layout_alignParentTop="true"
+                    android:text="New Text" />
+
+                <TextView
+                    android:id="@+id/textViewFilosovskykameniCost"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/buttonFilosovskykameni"
+                    android:layout_centerVertical="true"
+                    android:text="New Text" />
+
+                <TextView
+                    android:id="@+id/textViewFilosovskykameniPower"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/buttonFilosovskykameni"
+                    android:layout_alignParentBottom="true"
+                    android:text="New Text" />
+
+            </RelativeLayout>
         </LinearLayout>
-
-        <ImageView
-            android:layout_width="128dp"
-            android:layout_height="128dp"
-            android:id="@+id/imageView"
-            android:src="@drawable/cursor" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="New Text"
-            android:id="@+id/textViewCursorCost" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="New Text"
-            android:id="@+id/textViewCursorPower" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/buttonShahter"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="шахтёр" />
-
-            <TextView
-                android:id="@+id/textViewShahter"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="New Text" />
-        </LinearLayout>
-
-        <ImageView
-            android:layout_width="128dp"
-            android:layout_height="128dp"
-            android:id="@+id/imageView7"
-            android:src="@drawable/op" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="New Text"
-            android:id="@+id/textViewShahterCost" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="New Text"
-            android:id="@+id/textViewShahterPower" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/buttonOpitniyshahter"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="ОП.шахтёр" />
-
-            <TextView
-                android:id="@+id/textViewOpitniyshahter"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="New Text" />
-
-        </LinearLayout>
-
-        <ImageView
-            android:layout_width="128dp"
-            android:layout_height="128dp"
-            android:id="@+id/imageView3"
-            android:src="@drawable/a1" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="New Text"
-            android:id="@+id/textViewOpitniyshahterCost" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="New Text"
-            android:id="@+id/textViewOpitniyshahterPower" />
-
-        <LinearLayout
-
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/buttonShahterloshadi"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="шахтёр-лошадь" />
-
-            <TextView
-                android:id="@+id/textViewShahterloshadi"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="New Text" />
-
-        </LinearLayout>
-
-        <ImageView
-            android:layout_width="128dp"
-            android:layout_height="128dp"
-            android:id="@+id/imageView2"
-            android:src="@drawable/igogo" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="New Text"
-            android:id="@+id/textViewShahterloshadiCost" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="New Text"
-            android:id="@+id/textViewShahterloshadiPower" />
-
-        <LinearLayout
-
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/buttonShahterrobot"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="шахтёр-робот" />
-
-            <TextView
-                android:id="@+id/textViewShahterrobot"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="New Text" />
-
-        </LinearLayout>
-
-        <ImageView
-            android:layout_width="128dp"
-            android:layout_height="128dp"
-            android:id="@+id/imageView4"
-            android:src="@drawable/robot" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="New Text"
-            android:id="@+id/textViewShahterrobotCost" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="New Text"
-            android:id="@+id/textViewShahterrobotPower" />
-
-        <LinearLayout
-
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/buttonAlhimik"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="алхимик" />
-
-            <TextView
-                android:id="@+id/textViewAlhimik"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="New Text" />
-
-
-        </LinearLayout>
-
-        <ImageView
-            android:layout_width="128dp"
-            android:layout_height="128dp"
-            android:id="@+id/imageView5"
-            android:src="@drawable/a2" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="New Text"
-            android:id="@+id/textViewAlhimikCost" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="New Text"
-            android:id="@+id/textViewAlhimikPower" />
-
-        <LinearLayout
-
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/buttonFilosovskykameni"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="филосовский камень" />
-
-            <TextView
-                android:id="@+id/textViewFilosovskykameni"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="New Text" />
-
-        </LinearLayout>
-
-        <ImageView
-            android:layout_width="128dp"
-            android:layout_height="128dp"
-            android:id="@+id/imageView6"
-            android:src="@drawable/a3" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="New Text"
-            android:id="@+id/textViewFilosovskykameniCost" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="New Text"
-            android:id="@+id/textViewFilosovskykameniPower" />
-    </LinearLayout>
     </ScrollView>
 </LinearLayout>

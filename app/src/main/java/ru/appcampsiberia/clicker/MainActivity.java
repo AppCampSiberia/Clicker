@@ -1,10 +1,12 @@
 package ru.appcampsiberia.clicker;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.os.Handler;
+import android.preference.Preference;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -21,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     public long clickCount;
 
     MineThread mineThread;
+
     ImageView imageGold;
     Button buttonCursor;
     Button buttonShahter;
@@ -30,13 +33,13 @@ public class MainActivity extends AppCompatActivity {
     Button buttonAlhimik;
     Button buttonFilosovskykameni;
 
-    TextView textViewCursor;
-    TextView textViewShahter;
-    TextView textViewOpitniyShahter;
-    TextView textViewShahterloshadi;
-    TextView textViewShahterrobotr;
-    TextView textViewAlhimik;
-    TextView textViewFilosovskykameni;
+    TextView textViewCursorKolichestvo;
+    TextView textViewShahterKolichestvo;
+    TextView textViewOpitniyShahterKolichestvo;
+    TextView textViewShahterloshadiKolichestvo;
+    TextView textViewShahterrobotrKolichestvo;
+    TextView textViewAlhimikKolichestvo;
+    TextView textViewFilosovskykameniKolichestvo;
 
     TextView textViewCursorCost;
     TextView textViewShahterCost;
@@ -61,21 +64,21 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         clickCount = 0;
 
-        textViewCursor = (TextView) findViewById(R.id.textViewCursor);
-        textViewShahter = (TextView) findViewById(R.id.textViewShahter);
-        textViewOpitniyShahter = (TextView) findViewById(R.id.textViewOpitniyshahter);
-        textViewShahterloshadi = (TextView) findViewById(R.id.textViewShahterloshadi);
-        textViewShahterrobotr = (TextView) findViewById(R.id.textViewShahterrobot);
-        textViewAlhimik = (TextView) findViewById(R.id.textViewAlhimik);
-        textViewFilosovskykameni = (TextView) findViewById(R.id.textViewFilosovskykameni);
+        textViewCursorKolichestvo = (TextView) findViewById(R.id.textViewCursor);
+        textViewShahterKolichestvo = (TextView) findViewById(R.id.textViewShahterCount);
+        textViewOpitniyShahterKolichestvo = (TextView) findViewById(R.id.textViewOpitniyshahterCount);
+        textViewShahterloshadiKolichestvo = (TextView) findViewById(R.id.textViewShahterloshadiCount);
+        textViewShahterrobotrKolichestvo = (TextView) findViewById(R.id.textViewShahterrobotCount);
+        textViewAlhimikKolichestvo = (TextView) findViewById(R.id.textViewAlhimikCount);
+        textViewFilosovskykameniKolichestvo = (TextView) findViewById(R.id.textViewFilosovskykameniCount);
 
-        textViewCursorCost= (TextView) findViewById(R.id.textViewCursorCost);
-        textViewShahterCost= (TextView) findViewById(R.id.textViewShahterCost);
-        textViewOpitniyShahterCost= (TextView) findViewById(R.id.textViewOpitniyshahterCost);
-        textViewShahterloshadiCost= (TextView) findViewById(R.id.textViewShahterloshadiCost);
-        textViewShahterrobotrCost= (TextView) findViewById(R.id.textViewShahterrobotCost);
-        textViewAlhimikCost= (TextView) findViewById(R.id.textViewAlhimikCost);
-        textViewFilosovskykameniCost= (TextView) findViewById(R.id.textViewFilosovskykameniCost);
+        textViewCursorCost = (TextView) findViewById(R.id.textViewCursorCost);
+        textViewShahterCost = (TextView) findViewById(R.id.textViewShahterCost);
+        textViewOpitniyShahterCost = (TextView) findViewById(R.id.textViewOpitniyshahterCost);
+        textViewShahterloshadiCost = (TextView) findViewById(R.id.textViewShahterloshadiCost);
+        textViewShahterrobotrCost = (TextView) findViewById(R.id.textViewShahterrobotCost);
+        textViewAlhimikCost = (TextView) findViewById(R.id.textViewAlhimikCost);
+        textViewFilosovskykameniCost = (TextView) findViewById(R.id.textViewFilosovskykameniCost);
 
         textViewCursorPower = (TextView) findViewById(R.id.textViewCursorPower);
         textViewShahterPower = (TextView) findViewById(R.id.textViewShahterPower);
@@ -98,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        buttonCursor = (Button) findViewById(R.id.buttonCursor);
+        buttonCursor = (Button) findViewById(R.id.buttonCursorCount);
         buttonCursor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -107,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         buttonShahter = (Button) findViewById(R.id.buttonShahter);
-        buttonShahter .setOnClickListener(new View.OnClickListener() {
+        buttonShahter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mineThread.buy(2);
@@ -115,7 +118,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         buttonOpitniyshahter = (Button) findViewById(R.id.buttonOpitniyshahter);
-        buttonOpitniyshahter .setOnClickListener(new View.OnClickListener() {
+        buttonOpitniyshahter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mineThread.buy(3);
@@ -123,7 +126,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         buttonShahterloshadi = (Button) findViewById(R.id.buttonShahterloshadi);
-        buttonShahterloshadi .setOnClickListener(new View.OnClickListener() {
+        buttonShahterloshadi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mineThread.buy(4);
@@ -131,21 +134,21 @@ public class MainActivity extends AppCompatActivity {
         });
 
         buttonShahterrobot = (Button) findViewById(R.id.buttonShahterrobot);
-        buttonShahterrobot .setOnClickListener(new View.OnClickListener() {
+        buttonShahterrobot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mineThread.buy(5);
             }
         });
         buttonAlhimik = (Button) findViewById(R.id.buttonAlhimik);
-        buttonAlhimik .setOnClickListener(new View.OnClickListener() {
+        buttonAlhimik.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mineThread.buy(6);
             }
         });
         buttonFilosovskykameni = (Button) findViewById(R.id.buttonFilosovskykameni);
-        buttonFilosovskykameni .setOnClickListener(new View.OnClickListener() {
+        buttonFilosovskykameni.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mineThread.buy(7);
@@ -154,8 +157,26 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onStop() {
+        super.onStop();
+        Log.d(getClass().getSimpleName(), "onStop");
+        SharedPreferences.Editor shardPreferences = getSharedPreferences("a", MODE_PRIVATE).edit();
+        shardPreferences.putLong("clickCount", clickCount);
+        shardPreferences.putLong("kolvoKursorov", mineThread.kolichestvoCursorov);
+        shardPreferences.putLong("kolvoShahterov", mineThread.kolichestvoShahterov);
+        shardPreferences.putLong("kolvoOpitniyshahterov", mineThread.kolichestvoOpshahterov);
+        shardPreferences.putLong("kolvoLoshadshahterov", mineThread.kolichestvoLoshadshahterov);
+        shardPreferences.putLong("kolvoRoboshahterov", mineThread.kolichestvoRoboshahterov);
+        shardPreferences.putLong("kolvoAlhimikov", mineThread.kolichestvoAlhimikov);
+        shardPreferences.putLong("kolvoFilosovskiykamen", mineThread.kolichestvoFilosovskiykamen);
+        shardPreferences.putLong("dobuchaVsek", mineThread.dobuchaVsek);
+        shardPreferences.apply();
+
+    }
+
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu,menu);
+        getMenuInflater().inflate(R.menu.menu, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -167,72 +188,72 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void render() {
-         runOnUiThread(new Runnable() {
-             @Override
-             public void run() {
-                getSupportActionBar().setTitle("Добыто золота: " + Long.toString(clickCount) + " доход: " + Long.toString(mineThread.dobuchaVsek) );
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                getSupportActionBar().setTitle("Добыто золота: " + Long.toString(clickCount) + " доход: " + Long.toString(mineThread.dobuchaVsek));
 
-                 if (clickCount >= 20) {
-                     buttonCursor.setEnabled(true);
-             } else {
-                 buttonCursor.setEnabled(false);
-             }
-                 if (clickCount >= 100) {
-                     buttonShahter.setEnabled(true);
-                 } else {
-                     buttonShahter.setEnabled(false);
-                 }
-                 if (clickCount >= 1000) {
-                     buttonOpitniyshahter.setEnabled(true);
-                 } else {
-                     buttonOpitniyshahter.setEnabled(false);
-                 }
-                 if (clickCount >= 15000) {
-                     buttonShahterloshadi.setEnabled(true);
-                 } else {
-                     buttonShahterloshadi.setEnabled(false);
-             }
-                 if (clickCount >= 50000) {
-                     buttonShahterrobot.setEnabled(true);
-                 } else {
-                     buttonShahterrobot.setEnabled(false);
-                 }
-                 if (clickCount >= 250000) {
-                     buttonAlhimik.setEnabled(true);
-                 } else {
-                     buttonAlhimik.setEnabled(false);
-                 }
-                 if (clickCount >= 5000000) {
-                     buttonFilosovskykameni.setEnabled(true);
-                 } else {
-                     buttonFilosovskykameni.setEnabled(false);
-                 }
+                if (clickCount >= 20) {
+                    buttonCursor.setEnabled(true);
+                } else {
+                    buttonCursor.setEnabled(false);
+                }
+                if (clickCount >= 100) {
+                    buttonShahter.setEnabled(true);
+                } else {
+                    buttonShahter.setEnabled(false);
+                }
+                if (clickCount >= 1000) {
+                    buttonOpitniyshahter.setEnabled(true);
+                } else {
+                    buttonOpitniyshahter.setEnabled(false);
+                }
+                if (clickCount >= 15000) {
+                    buttonShahterloshadi.setEnabled(true);
+                } else {
+                    buttonShahterloshadi.setEnabled(false);
+                }
+                if (clickCount >= 50000) {
+                    buttonShahterrobot.setEnabled(true);
+                } else {
+                    buttonShahterrobot.setEnabled(false);
+                }
+                if (clickCount >= 250000) {
+                    buttonAlhimik.setEnabled(true);
+                } else {
+                    buttonAlhimik.setEnabled(false);
+                }
+                if (clickCount >= 5000000) {
+                    buttonFilosovskykameni.setEnabled(true);
+                } else {
+                    buttonFilosovskykameni.setEnabled(false);
+                }
 
-                 textViewCursor.setText(Long.toString(mineThread.kolichestvoCursorov));
-                 textViewShahter.setText(Long.toString(mineThread.kolichestvoShahterov));
-                 textViewOpitniyShahter.setText(Long.toString(mineThread.kolichestvoOpshahterov));
-                 textViewShahterloshadi.setText(Long.toString(mineThread.kolichestvoLoshadshahterov));
-                 textViewShahterrobotr.setText(Long.toString(mineThread.kolichestvoRoboshahterov));
-                 textViewAlhimik.setText(Long.toString(mineThread.kolichestvoAlhimikov));
-                 textViewFilosovskykameni.setText(Long.toString(mineThread.kolichestvoFilosovskiykamen));
+                textViewCursorKolichestvo.setText("Количество: " + Long.toString(mineThread.kolichestvoCursorov));
+                textViewShahterKolichestvo.setText("Количество: " + Long.toString(mineThread.kolichestvoShahterov));
+                textViewOpitniyShahterKolichestvo.setText("Количество: " + Long.toString(mineThread.kolichestvoOpshahterov));
+                textViewShahterloshadiKolichestvo.setText("Количество: " + Long.toString(mineThread.kolichestvoLoshadshahterov));
+                textViewShahterrobotrKolichestvo.setText("Количество: " + Long.toString(mineThread.kolichestvoRoboshahterov));
+                textViewAlhimikKolichestvo.setText("Количество: " + Long.toString(mineThread.kolichestvoAlhimikov));
+                textViewFilosovskykameniKolichestvo.setText("Количество: " + Long.toString(mineThread.kolichestvoFilosovskiykamen));
 
-                 textViewCursorCost.setText(Long.toString(mineThread.costCursorov));
-                 textViewShahterCost.setText(Long.toString(mineThread.costShahterov));
-                 textViewOpitniyShahterCost.setText(Long.toString(mineThread.costOpshahterov));
-                 textViewShahterloshadiCost.setText(Long.toString(mineThread.costLoshadshahterov));
-                 textViewShahterrobotrCost.setText(Long.toString(mineThread.costRoboshahterov));
-                 textViewAlhimikCost.setText(Long.toString(mineThread.costAlhimikov));
-                 textViewFilosovskykameniCost.setText(Long.toString(mineThread.costFilosovskiykamen));
+                textViewCursorCost.setText("Цена: " + Long.toString(mineThread.costCursorov));
+                textViewShahterCost.setText("Цена: " + Long.toString(mineThread.costShahterov));
+                textViewOpitniyShahterCost.setText("Цена: " + Long.toString(mineThread.costOpshahterov));
+                textViewShahterloshadiCost.setText("Цена: " + Long.toString(mineThread.costLoshadshahterov));
+                textViewShahterrobotrCost.setText("Цена: " + Long.toString(mineThread.costRoboshahterov));
+                textViewAlhimikCost.setText("Цена: " + Long.toString(mineThread.costAlhimikov));
+                textViewFilosovskykameniCost.setText("Цена: " + Long.toString(mineThread.costFilosovskiykamen));
 
-                 textViewCursorPower.setText(Long.toString(mineThread.dobuchaCursorov));
-                 textViewShahterPower.setText(Long.toString(mineThread.dobuchaShahterov));
-                 textViewOpitniyShahterPower.setText(Long.toString(mineThread.dobuchaOpshahterov));
-                 textViewShahterloshadiPower.setText(Long.toString(mineThread.dobuchaLoshadshahterov));
-                 textViewShahterrobotrPower.setText(Long.toString(mineThread.dobuchaRoboshahterov));
-                 textViewAlhimikPower.setText(Long.toString(mineThread.dobuchaAlhimikov));
-                 textViewFilosovskykameniPower.setText(Long.toString(mineThread.dobuchaFilosovskiykamen));
+                textViewCursorPower.setText("Доход/сек: " + Long.toString(mineThread.dobuchaCursorov));
+                textViewShahterPower.setText("Доход/сек: " + Long.toString(mineThread.dobuchaShahterov));
+                textViewOpitniyShahterPower.setText("Доход/сек: " + Long.toString(mineThread.dobuchaOpshahterov));
+                textViewShahterloshadiPower.setText("Доход/сек: " + Long.toString(mineThread.dobuchaLoshadshahterov));
+                textViewShahterrobotrPower.setText("Доход/сек: " + Long.toString(mineThread.dobuchaRoboshahterov));
+                textViewAlhimikPower.setText("Доход/сек: " + Long.toString(mineThread.dobuchaAlhimikov));
+                textViewFilosovskykameniPower.setText("Доход/сек: " + Long.toString(mineThread.dobuchaFilosovskiykamen));
 
-             }
-         });
-     }
+            }
+        });
+    }
 }

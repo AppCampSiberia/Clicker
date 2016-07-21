@@ -1,5 +1,8 @@
 package ru.appcampsiberia.clicker;
 
+import android.content.Context;
+import android.content.SharedPreferences;
+
 /**
  * Created by jukov on 18.07.2016.
  */
@@ -33,12 +36,25 @@ public class MineThread implements Runnable {
     public long costAlhimikov = 250000;
     public long costFilosovskiykamen = 5000000;
 
+
     public MineThread(MainActivity mainActivity) {
         this.mainActivity = mainActivity;
+        SharedPreferences sharedPreferences=mainActivity.getSharedPreferences("a", Context.MODE_PRIVATE);
+        mainActivity.clickCount = sharedPreferences.getLong("clickCount", 0);
+        kolichestvoCursorov = sharedPreferences.getLong("kolvoKursorov",0);
+        kolichestvoShahterov = sharedPreferences.getLong("kolvoShahterov",0);
+        kolichestvoOpshahterov = sharedPreferences.getLong("kolvoOpitniyshahterov",0);
+        kolichestvoLoshadshahterov = sharedPreferences.getLong("kolvoLoshadshahterov",0);
+        kolichestvoRoboshahterov = sharedPreferences.getLong("kolvoRoboshahterov",0);
+        kolichestvoAlhimikov = sharedPreferences.getLong("kolvoAlhimikov",0);
+        kolichestvoFilosovskiykamen = sharedPreferences.getLong("kolvoFilosovskiykamen",0);
+        dobuchaVsek = sharedPreferences.getLong("dobuchaVsek",0);
+
     }
 
     @Override
     public void run() {
+
         while (true) {
             mainActivity.clickCount += dobuchaVsek;
             mainActivity.render();
@@ -76,7 +92,7 @@ public class MineThread implements Runnable {
             case 4: //loshadshahter
                 if (mainActivity.clickCount >= 15000) {
                     kolichestvoLoshadshahterov++;
-                    dobuchaVsek += dobuchaOpshahterov;
+                    dobuchaVsek += dobuchaLoshadshahterov;
                     mainActivity.clickCount -= costLoshadshahterov;
                 }
                 break;
@@ -102,5 +118,6 @@ public class MineThread implements Runnable {
                 }
                 break;
         }
+        mainActivity.render();
     }
 }
