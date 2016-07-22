@@ -11,6 +11,8 @@ public class MineThread implements Runnable {
     MainActivity mainActivity;
 
     public long dobuchaVsek = 0;
+    public long dobuchaZaClick = 1;
+    public long CostZaClick = 100;
 
     public long kolichestvoCursorov = 0;
     public long kolichestvoShahterov = 0;
@@ -49,6 +51,8 @@ public class MineThread implements Runnable {
         kolichestvoAlhimikov = sharedPreferences.getLong("kolvoAlhimikov",0);
         kolichestvoFilosovskiykamen = sharedPreferences.getLong("kolvoFilosovskiykamen",0);
         dobuchaVsek = sharedPreferences.getLong("dobuchaVsek",0);
+        dobuchaZaClick = sharedPreferences.getLong("dobuchaZaClick",1);
+        CostZaClick = sharedPreferences.getLong("CostZaClick",100);
 
     }
 
@@ -65,7 +69,14 @@ public class MineThread implements Runnable {
             }
         }
     }
+    public void upgrede() {
+        if (mainActivity.clickCount >= CostZaClick){
+        dobuchaZaClick*=2;
+            mainActivity.clickCount -= CostZaClick;
+            CostZaClick*=3;
 
+        }
+    }
     public void buy(int who) {
         switch (who) {
             case 1: //kursor

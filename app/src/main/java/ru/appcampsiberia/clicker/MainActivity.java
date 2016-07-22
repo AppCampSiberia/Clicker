@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     Button buttonShahterrobot;
     Button buttonAlhimik;
     Button buttonFilosovskykameni;
+    Button buttonClickUpgrade;
 
     TextView textViewCursorKolichestvo;
     TextView textViewShahterKolichestvo;
@@ -96,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
         imageGold.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                clickCount++;
+                clickCount+=mineThread.dobuchaZaClick;
                 render();
             }
         });
@@ -154,6 +155,13 @@ public class MainActivity extends AppCompatActivity {
                 mineThread.buy(7);
             }
         });
+        buttonClickUpgrade = (Button) findViewById(R.id.buttonClickupgreid);
+                buttonClickUpgrade.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        mineThread.upgrede();
+                    }
+                });
     }
 
     @Override
@@ -170,6 +178,8 @@ public class MainActivity extends AppCompatActivity {
         shardPreferences.putLong("kolvoAlhimikov", mineThread.kolichestvoAlhimikov);
         shardPreferences.putLong("kolvoFilosovskiykamen", mineThread.kolichestvoFilosovskiykamen);
         shardPreferences.putLong("dobuchaVsek", mineThread.dobuchaVsek);
+        shardPreferences.putLong("dobuchaZaClick",mineThread.dobuchaZaClick);
+        shardPreferences.putLong("CostZaClick",mineThread.CostZaClick);
         shardPreferences.apply();
 
     }
@@ -191,8 +201,8 @@ public class MainActivity extends AppCompatActivity {
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                getSupportActionBar().setTitle("Добыто золота: " + Long.toString(clickCount) + " доход: " + Long.toString(mineThread.dobuchaVsek));
-
+                getSupportActionBar().setTitle("Золото: " + Long.toString(clickCount));
+                getSupportActionBar().setSubtitle("Доход: " + Long.toString(mineThread.dobuchaVsek));
                 if (clickCount >= 20) {
                     buttonCursor.setEnabled(true);
                 } else {
@@ -228,6 +238,7 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     buttonFilosovskykameni.setEnabled(false);
                 }
+                buttonClickUpgrade.setText(getString(R.string.button_clickupgreit, mineThread.CostZaClick, mineThread.dobuchaZaClick));
 
                 textViewCursorKolichestvo.setText("Количество: " + Long.toString(mineThread.kolichestvoCursorov));
                 textViewShahterKolichestvo.setText("Количество: " + Long.toString(mineThread.kolichestvoShahterov));
