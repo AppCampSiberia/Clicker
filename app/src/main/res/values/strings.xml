@@ -1,4 +1,4 @@
 <resources>
     <string name="button_clickupgreit" formatted="false">улучшение тычка(стоимость: %d) добыча сейчас : %d</string>
-    <string name="app_name">Clicker</string>
+    <string name="app_name">Gold Clicker</string>
 </resources>
