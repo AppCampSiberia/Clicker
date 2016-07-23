@@ -48,7 +48,7 @@
                 android:layout_marginBottom="6dp">
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageViewCursor"
                     android:layout_width="128dp"
                     android:layout_height="128dp"
                     android:src="@drawable/cursor" />
@@ -57,7 +57,7 @@
                     android:id="@+id/buttonCursorCount"
                     android:layout_width="128dp"
                     android:layout_height="128dp"
-                    android:layout_toEndOf="@+id/imageView"
+                    android:layout_toEndOf="@+id/imageViewCursor"
                     android:background="#ff0000"
                     android:text="курсор" />
 
@@ -95,7 +95,7 @@
                 android:layout_marginBottom="6dp">
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageViewShahter"
                     android:layout_width="128dp"
                     android:layout_height="128dp"
                     android:src="@drawable/shahter" />
@@ -104,7 +104,7 @@
                     android:id="@+id/buttonShahter"
                     android:layout_width="128dp"
                     android:layout_height="128dp"
-                    android:layout_toEndOf="@+id/imageView"
+                    android:layout_toEndOf="@+id/imageViewShahter"
                     android:background="#ff0000"
                     android:text="шахтёр" />
 
@@ -141,7 +141,7 @@
                 android:layout_marginBottom="6dp">
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageViewOpshahter"
                     android:layout_width="128dp"
                     android:layout_height="128dp"
                     android:src="@drawable/opshahter" />
@@ -150,7 +150,7 @@
                     android:id="@+id/buttonOpitniyshahter"
                     android:layout_width="128dp"
                     android:layout_height="128dp"
-                    android:layout_toEndOf="@+id/imageView"
+                    android:layout_toEndOf="@+id/imageViewOpshahter"
                     android:background="#ff0000"
                     android:text="ОП.шахтер" />
 
@@ -188,7 +188,7 @@
                 android:layout_marginBottom="6dp">
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageViewIgogo"
                     android:layout_width="128dp"
                     android:layout_height="128dp"
                     android:src="@drawable/igogo" />
@@ -197,7 +197,7 @@
                     android:id="@+id/buttonShahterloshadi"
                     android:layout_width="128dp"
                     android:layout_height="128dp"
-                    android:layout_toEndOf="@+id/imageView"
+                    android:layout_toEndOf="@+id/imageViewIgogo"
                     android:background="#ff0000"
                     android:text="шахтёрлошадь" />
 
