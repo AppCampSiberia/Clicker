@@ -1,24 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:weightSum="1">
+
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/scrollView" >
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Авторы игры:
+        android:text="Авторы игры:\n
  Егор Гольденберг - в основном писал код программы, но так же иногда помогал с дизайном.
 Именно из-за него у нас такие ужастные аватарки для автокликов, - да, да, да, это его
-дело!
+дело!\n\n
 
  Артур Нифёдов - сначала делал анимацию, которая нам не приходилась, но так же помогал с
 кодом и дизайном. Приставал ко всем и мешал работать, но в дело внёс некоторое количество
-картинок.
+картинок.\n\n
 
  Алексей Моргунов - помогал в основном с кодом и сделал иконку для игры. Придумал саму идею,
 но хоть и внёс много чего, часто отходил от создания программы. Половину времени вообще ничего
-не делал.
+не делал.\n\n\n\n
 
 
 
@@ -30,4 +38,28 @@
                        Все права защищены законом."
         android:id="@+id/textView"
         android:layout_weight="0.26" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:background="#80ffffff">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Это приложение создано школьниками во время AppCamp 2016, http://vk.com/appcamp/.\n\nИнструктор команды: Александр Жуков\n\nМы благодарим компании:\n\nAzoft за подарки участникам, лекции и экскурсию;\n\nEastBanc Technologies за помещение для занятий, лекции и экскурсию;\n\nSoftLab-NSK и Новосибирский Государственный Университет за предоставленную технику и помощь в организации;\n\nXored Software за подарки участникам и экскурсию."
+            android:id="@+id/appCampFooter"
+            android:autoLink="web"
+            android:textColor="#074915" />
+    </LinearLayout>
+
 </LinearLayout>
+
+</ScrollView>
