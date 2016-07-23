@@ -22,6 +22,34 @@ import ru.appcampsibria.clicker.R;
 public class MainActivity extends AppCompatActivity {
     public long clickCount;
 
+    public long dobuchaVsek = 0;
+    public long dobuchaZaClick = 1;
+    public long CostZaClick = 100;
+
+    public long kolichestvoCursorov = 0;
+    public long kolichestvoShahterov = 0;
+    public long kolichestvoOpshahterov = 0;
+    public long kolichestvoLoshadshahterov = 0;
+    public long kolichestvoRoboshahterov = 0;
+    public long kolichestvoAlhimikov = 0;
+    public long kolichestvoFilosovskiykamen = 0;
+
+    public long dobuchaCursorov = 1;
+    public long dobuchaShahterov = 5;
+    public long dobuchaOpshahterov = 10;
+    public long dobuchaLoshadshahterov = 50;
+    public long dobuchaRoboshahterov = 80;
+    public long dobuchaAlhimikov = 150;
+    public long dobuchaFilosovskiykamen = 1000;
+
+    public long costCursorov = 20;
+    public long costShahterov = 100;
+    public long costOpshahterov = 1000;
+    public long costLoshadshahterov = 15000;
+    public long costRoboshahterov = 50000;
+    public long costAlhimikov = 250000;
+    public long costFilosovskiykamen = 5000000;
+
     MineThread mineThread;
 
     ImageView imageGold;
@@ -97,7 +125,7 @@ public class MainActivity extends AppCompatActivity {
         imageGold.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                clickCount+=mineThread.dobuchaZaClick;
+                clickCount+=dobuchaZaClick;
                 render();
             }
         });
@@ -170,16 +198,48 @@ public class MainActivity extends AppCompatActivity {
         Log.d(getClass().getSimpleName(), "onStop");
         SharedPreferences.Editor shardPreferences = getSharedPreferences("a", MODE_PRIVATE).edit();
         shardPreferences.putLong("clickCount", clickCount);
-        shardPreferences.putLong("kolvoKursorov", mineThread.kolichestvoCursorov);
-        shardPreferences.putLong("kolvoShahterov", mineThread.kolichestvoShahterov);
-        shardPreferences.putLong("kolvoOpitniyshahterov", mineThread.kolichestvoOpshahterov);
-        shardPreferences.putLong("kolvoLoshadshahterov", mineThread.kolichestvoLoshadshahterov);
-        shardPreferences.putLong("kolvoRoboshahterov", mineThread.kolichestvoRoboshahterov);
-        shardPreferences.putLong("kolvoAlhimikov", mineThread.kolichestvoAlhimikov);
-        shardPreferences.putLong("kolvoFilosovskiykamen", mineThread.kolichestvoFilosovskiykamen);
-        shardPreferences.putLong("dobuchaVsek", mineThread.dobuchaVsek);
-        shardPreferences.putLong("dobuchaZaClick",mineThread.dobuchaZaClick);
-        shardPreferences.putLong("CostZaClick",mineThread.CostZaClick);
+        shardPreferences.putLong("kolvoKursorov", kolichestvoCursorov);
+        shardPreferences.putLong("kolvoShahterov", kolichestvoShahterov);
+        shardPreferences.putLong("kolvoOpitniyshahterov", kolichestvoOpshahterov);
+        shardPreferences.putLong("kolvoLoshadshahterov", kolichestvoLoshadshahterov);
+        shardPreferences.putLong("kolvoRoboshahterov", kolichestvoRoboshahterov);
+        shardPreferences.putLong("kolvoAlhimikov", kolichestvoAlhimikov);
+        shardPreferences.putLong("kolvoFilosovskiykamen", kolichestvoFilosovskiykamen);
+
+        shardPreferences.putLong("dobuchaVsek", dobuchaVsek);
+        shardPreferences.putLong("dobuchaZaClick",dobuchaZaClick);
+        shardPreferences.putLong("CostZaClick",CostZaClick);
+
+        if (dobuchaCursorov != 0)
+            shardPreferences.putLong("dobuchaKursorov",dobuchaCursorov);
+        if (dobuchaShahterov != 0)
+            shardPreferences.putLong("dobuchaShahterov",dobuchaShahterov);
+        if (dobuchaOpshahterov != 0)
+            shardPreferences.putLong("dobuchaOpitniyshahterov",dobuchaOpshahterov);
+        if (dobuchaLoshadshahterov != 0)
+            shardPreferences.putLong("dobuchaLoshadshahterov",dobuchaLoshadshahterov);
+        if (dobuchaRoboshahterov != 0)
+            shardPreferences.putLong("dobuchaRoboshahterov",dobuchaRoboshahterov);
+        if (dobuchaAlhimikov != 0)
+            shardPreferences.putLong("dobuchaAlhimikov",dobuchaAlhimikov);
+        if (dobuchaFilosovskiykamen != 0)
+            shardPreferences.putLong("dobuchaFilosovskiykamen",dobuchaFilosovskiykamen);
+
+        if (costCursorov!= 0)
+        shardPreferences.putLong("costKursorov",costCursorov);
+        if (costShahterov!= 0)
+        shardPreferences.putLong("costShahterov ",costShahterov);
+        if (costOpshahterov!= 0)
+        shardPreferences.putLong("costOpitniyshahterov",costOpshahterov);
+        if (costLoshadshahterov!= 0)
+        shardPreferences.putLong("costLoshadshahterov",costLoshadshahterov);
+        if (costRoboshahterov!= 0)
+        shardPreferences.putLong("costRoboshahterov",costRoboshahterov);
+        if (costAlhimikov!= 0)
+        shardPreferences.putLong("costAlhimikov",costAlhimikov);
+        if (costFilosovskiykamen!= 0)
+        shardPreferences.putLong("costFilosovskiykamen",costFilosovskiykamen);
+
         shardPreferences.apply();
 
     }
@@ -202,7 +262,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
                 getSupportActionBar().setTitle("Золото: " + Long.toString(clickCount));
-                getSupportActionBar().setSubtitle("Доход: " + Long.toString(mineThread.dobuchaVsek));
+                getSupportActionBar().setSubtitle("Доход: " + Long.toString(dobuchaVsek));
                 if (clickCount >= 20) {
                     buttonCursor.setEnabled(true);
                 } else {
@@ -238,31 +298,31 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     buttonFilosovskykameni.setEnabled(false);
                 }
-                buttonClickUpgrade.setText(getString(R.string.button_clickupgreit, mineThread.CostZaClick, mineThread.dobuchaZaClick));
+                buttonClickUpgrade.setText(getString(R.string.button_clickupgreit, CostZaClick, dobuchaZaClick));
 
-                textViewCursorKolichestvo.setText("Количество: " + Long.toString(mineThread.kolichestvoCursorov));
-                textViewShahterKolichestvo.setText("Количество: " + Long.toString(mineThread.kolichestvoShahterov));
-                textViewOpitniyShahterKolichestvo.setText("Количество: " + Long.toString(mineThread.kolichestvoOpshahterov));
-                textViewShahterloshadiKolichestvo.setText("Количество: " + Long.toString(mineThread.kolichestvoLoshadshahterov));
-                textViewShahterrobotrKolichestvo.setText("Количество: " + Long.toString(mineThread.kolichestvoRoboshahterov));
-                textViewAlhimikKolichestvo.setText("Количество: " + Long.toString(mineThread.kolichestvoAlhimikov));
-                textViewFilosovskykameniKolichestvo.setText("Количество: " + Long.toString(mineThread.kolichestvoFilosovskiykamen));
+                textViewCursorKolichestvo.setText("Количество: " + Long.toString(kolichestvoCursorov));
+                textViewShahterKolichestvo.setText("Количество: " + Long.toString(kolichestvoShahterov));
+                textViewOpitniyShahterKolichestvo.setText("Количество: " + Long.toString(kolichestvoOpshahterov));
+                textViewShahterloshadiKolichestvo.setText("Количество: " + Long.toString(kolichestvoLoshadshahterov));
+                textViewShahterrobotrKolichestvo.setText("Количество: " + Long.toString(kolichestvoRoboshahterov));
+                textViewAlhimikKolichestvo.setText("Количество: " + Long.toString(kolichestvoAlhimikov));
+                textViewFilosovskykameniKolichestvo.setText("Количество: " + Long.toString(kolichestvoFilosovskiykamen));
 
-                textViewCursorCost.setText("Цена: " + Long.toString(mineThread.costCursorov));
-                textViewShahterCost.setText("Цена: " + Long.toString(mineThread.costShahterov));
-                textViewOpitniyShahterCost.setText("Цена: " + Long.toString(mineThread.costOpshahterov));
-                textViewShahterloshadiCost.setText("Цена: " + Long.toString(mineThread.costLoshadshahterov));
-                textViewShahterrobotrCost.setText("Цена: " + Long.toString(mineThread.costRoboshahterov));
-                textViewAlhimikCost.setText("Цена: " + Long.toString(mineThread.costAlhimikov));
-                textViewFilosovskykameniCost.setText("Цена: " + Long.toString(mineThread.costFilosovskiykamen));
+                textViewCursorCost.setText("Цена: " + Long.toString(costCursorov));
+                textViewShahterCost.setText("Цена: " + Long.toString(costShahterov));
+                textViewOpitniyShahterCost.setText("Цена: " + Long.toString(costOpshahterov));
+                textViewShahterloshadiCost.setText("Цена: " + Long.toString(costLoshadshahterov));
+                textViewShahterrobotrCost.setText("Цена: " + Long.toString(costRoboshahterov));
+                textViewAlhimikCost.setText("Цена: " + Long.toString(costAlhimikov));
+                textViewFilosovskykameniCost.setText("Цена: " + Long.toString(costFilosovskiykamen));
 
-                textViewCursorPower.setText("Доход/сек: " + Long.toString(mineThread.dobuchaCursorov));
-                textViewShahterPower.setText("Доход/сек: " + Long.toString(mineThread.dobuchaShahterov));
-                textViewOpitniyShahterPower.setText("Доход/сек: " + Long.toString(mineThread.dobuchaOpshahterov));
-                textViewShahterloshadiPower.setText("Доход/сек: " + Long.toString(mineThread.dobuchaLoshadshahterov));
-                textViewShahterrobotrPower.setText("Доход/сек: " + Long.toString(mineThread.dobuchaRoboshahterov));
-                textViewAlhimikPower.setText("Доход/сек: " + Long.toString(mineThread.dobuchaAlhimikov));
-                textViewFilosovskykameniPower.setText("Доход/сек: " + Long.toString(mineThread.dobuchaFilosovskiykamen));
+                textViewCursorPower.setText("Доход/сек: " + Long.toString(dobuchaCursorov));
+                textViewShahterPower.setText("Доход/сек: " + Long.toString(dobuchaShahterov));
+                textViewOpitniyShahterPower.setText("Доход/сек: " + Long.toString(dobuchaOpshahterov));
+                textViewShahterloshadiPower.setText("Доход/сек: " + Long.toString(dobuchaLoshadshahterov));
+                textViewShahterrobotrPower.setText("Доход/сек: " + Long.toString(dobuchaRoboshahterov));
+                textViewAlhimikPower.setText("Доход/сек: " + Long.toString(dobuchaAlhimikov));
+                textViewFilosovskykameniPower.setText("Доход/сек: " + Long.toString(dobuchaFilosovskiykamen));
 
             }
         });

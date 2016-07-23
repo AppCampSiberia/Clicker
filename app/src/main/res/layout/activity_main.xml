@@ -144,7 +144,7 @@
                     android:id="@+id/imageView"
                     android:layout_width="128dp"
                     android:layout_height="128dp"
-                    android:src="@drawable/op" />
+                    android:src="@drawable/opshahter" />
 
                 <Button
                     android:id="@+id/buttonOpitniyshahter"
